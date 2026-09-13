@@ -1,125 +1,346 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#28483d">
-<title>北海道 4泊5日｜ふたり旅のしおり</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOKKAIDO 2026｜4泊5日 ふたり旅のしおり</title>
 <style>
-:root{--ink:#26352f;--green:#28483d;--sage:#dfe8df;--sand:#f5efe4;--cream:#fbfaf6;--gold:#a8844d;--muted:#6d7771;--line:#dfe3dc}
-*{box-sizing:border-box} body{margin:0;background:var(--cream);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;line-height:1.7}
-.hero{background:linear-gradient(145deg,#294b40,#49695c);color:white;padding:52px 22px 42px;border-radius:0 0 32px 32px;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-90px;top:-70px;background:rgba(255,255,255,.07)}
-.kicker{letter-spacing:.18em;font-size:12px;opacity:.82}.hero h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:36px;line-height:1.2;margin:12px 0}.hero p{margin:0;opacity:.9}
-.wrap{max-width:760px;margin:auto}.content{padding:22px 18px 50px}
-.card{background:white;border:1px solid var(--line);border-radius:22px;padding:20px;margin:14px 0;box-shadow:0 5px 18px rgba(37,55,45,.05)}
-.route{display:flex;gap:7px;flex-wrap:wrap;align-items:center;font-size:14px;color:var(--muted)} .route b{color:var(--green)}
-.day{scroll-margin-top:15px}.dayhead{display:flex;gap:12px;align-items:flex-start}.date{font-size:12px;letter-spacing:.08em;color:var(--gold);font-weight:700;min-width:54px}.day h2{font-size:22px;margin:0}.tag{display:inline-block;background:var(--sage);color:var(--green);padding:3px 9px;border-radius:99px;font-size:11px;margin-top:5px}
-.time{display:grid;grid-template-columns:62px 1fr;gap:10px;margin-top:16px}.time>div{padding:5px 0}.clock{font-size:12px;color:var(--gold);font-weight:700}.item{border-left:2px solid var(--sage);padding-left:13px}
-.hotel{background:var(--sand);border:0}.hotel strong{font-size:17px}.small{font-size:13px;color:var(--muted)}
-h3{font-size:15px;margin:20px 0 8px;color:var(--green)} ul{padding-left:20px;margin:8px 0}
-.check label{display:block;padding:9px 0;border-bottom:1px solid var(--line)} input{accent-color:var(--green);margin-right:9px}
-.note{font-size:12px;color:var(--muted);background:#f2f4f0;border-radius:14px;padding:12px 14px}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:10px 0 35px}
-.sticky{position:sticky;bottom:12px;margin:0 auto 4px;width:max-content;max-width:calc(100% - 36px);background:var(--green);color:white;border-radius:99px;padding:9px 16px;font-size:12px;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+:root{
+  --ink:#20364d; --muted:#6d7d8d; --line:#dce6ec; --bg:#f7fafb;
+  --blue:#4f91bd; --blue2:#dceff8; --green:#6d9d88; --green2:#e7f2ec;
+  --pink:#bd7180; --pink2:#f7e8eb; --gold:#b89045; --gold2:#f7f0df;
+  --purple:#8274a8; --purple2:#eeeaf7; --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink); background:linear-gradient(180deg,#eef6fa 0,#fff 18%,#f8fafb 100%);
+  line-height:1.75;
+}
 a{color:inherit}
+.wrap{max-width:1120px;margin:auto;padding:0 22px}
+.hero{
+  position:relative; overflow:hidden; padding:68px 0 42px;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(255,255,255,.9),transparent 26%),
+    linear-gradient(135deg,#dff2fa 0%,#f7fbfd 52%,#eaf4ed 100%);
+}
+.hero:after{
+  content:"";position:absolute;left:-5%;right:-5%;bottom:-70px;height:170px;
+  background:#fff;border-radius:50% 50% 0 0/70% 70% 0 0;
+}
+.eyebrow{letter-spacing:.22em;font-size:13px;color:#66849b;font-weight:700}
+h1{font-family:Georgia,"Times New Roman",serif;letter-spacing:.12em;font-size:clamp(42px,8vw,82px);margin:10px 0 0;font-weight:500}
+.date{font-family:Georgia,serif;font-size:20px;letter-spacing:.14em;color:#52708a;margin:4px 0 18px}
+.subtitle{font-size:clamp(20px,3vw,30px);font-weight:700;margin:0 0 8px}
+.tagline{color:var(--muted);font-size:15px;margin:0;max-width:650px}
+.route{
+  position:relative;z-index:2;display:flex;gap:8px;flex-wrap:wrap;align-items:center;
+  margin-top:32px;font-weight:700;font-size:15px;
+}
+.route span{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.82);border:1px solid #dbe8ef}
+.route i{font-style:normal;color:#9aa9b3}
+nav{
+  position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)
+}
+.navin{display:flex;gap:6px;overflow:auto;padding:9px 22px}
+.navin a{white-space:nowrap;text-decoration:none;font-size:13px;padding:7px 11px;border-radius:999px}
+.navin a:hover{background:var(--blue2)}
+section{scroll-margin-top:65px}
+.days{padding:42px 0 10px}
+.day{
+  background:#fff;border:1px solid var(--line);border-radius:24px;margin:22px 0;
+  box-shadow:0 10px 30px rgba(43,74,95,.06);overflow:hidden
+}
+.dayhead{padding:23px 25px 18px;display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+.daynum{font-family:Georgia,serif;font-size:38px;line-height:1}
+.dow{font-size:12px;letter-spacing:.2em;font-weight:800;margin-left:7px}
+.daytitle{font-size:22px;margin:8px 0 0}
+.theme{color:var(--muted);font-size:13px}
+.badge{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:700;background:#f5f8fa}
+.timeline{padding:4px 25px 26px}
+.item{display:grid;grid-template-columns:94px 1fr;gap:18px;padding:16px 0;border-top:1px solid #edf1f4}
+.item:first-child{border-top:0}
+.time{font-weight:800;font-size:13px;color:#5d7485}
+.item h3{font-size:16px;margin:0 0 3px}
+.item p{margin:0;color:#536675;font-size:14px}
+.links{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+.btn{
+  display:inline-flex;align-items:center;gap:5px;text-decoration:none;border:1px solid #d8e3e9;
+  background:#fff;padding:5px 9px;border-radius:8px;font-size:12px;color:#3e647c
+}
+.btn:hover{background:#f1f7fa}
+.hotel{
+  margin:0 25px 25px;padding:17px 18px;border-radius:16px;background:#f7fafb;border:1px solid #e2ebef
+}
+.hotel strong{font-size:15px}.hotel small{display:block;color:var(--muted);margin-top:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 8px 25px rgba(43,74,95,.05)}
+.card h3{margin:0 0 10px;font-size:18px}.card p,.card li{font-size:13px;color:#586b79}
+.card ul{margin:8px 0 0;padding-left:19px}
+.check li{list-style:none;margin:9px 0;padding-left:0}.check li:before{content:"□";margin-right:9px;color:#5d8dac;font-weight:700}
+.mapgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.maplink{display:block;text-decoration:none;padding:12px 13px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.maplink:hover{background:#f3f8fb}
+footer{text-align:center;padding:55px 0 75px;color:#7b8c98}
+footer .big{font-family:Georgia,serif;letter-spacing:.18em;font-size:17px;color:#46667d}
+.note{background:#fff8e9;border:1px solid #f0dfb5;border-radius:14px;padding:13px 15px;font-size:13px;color:#715d33;margin-top:15px}
+@media(max-width:720px){
+  .wrap{padding:0 15px}.hero{padding:48px 0 32px}
+  .dayhead{padding:20px}.timeline{padding:0 20px 20px}.hotel{margin:0 20px 20px}
+  .item{grid-template-columns:72px 1fr;gap:12px}
+  .grid{grid-template-columns:1fr}
+  .mapgrid{grid-template-columns:1fr}
+  .daytitle{font-size:19px}.daynum{font-size:31px}
+}
+
+.hotel details{margin-top:10px}
+.hotel summary{
+  cursor:pointer; list-style:none; display:inline-flex; align-items:center; gap:7px;
+  padding:7px 11px; border:1px solid #d8e3e9; border-radius:9px; background:#fff;
+  color:#3e647c; font-size:12px; font-weight:700;
+}
+.hotel summary::-webkit-details-marker{display:none}
+.hotel summary:before{content:"＋";font-size:15px;line-height:1}
+.hotel details[open] summary:before{content:"−"}
+.hotel-detail{
+  margin-top:12px; padding:14px 15px; background:#fff; border:1px solid #e3ebef;
+  border-radius:12px; font-size:12px; color:#566b79;
+}
+.hotel-detail .row{margin:5px 0}
+.hotel-detail .label{color:#84939d;font-weight:700;margin-right:7px}
+.hotel-detail .price{font-size:16px;color:#20364d;font-weight:800}
+.hotel-detail .plan{margin-top:8px;padding:9px 10px;background:#f7fafb;border-radius:9px}
+
 </style>
 </head>
 <body>
-<div class="hero">
+
+<header class="hero">
   <div class="wrap">
-    <div class="kicker">HOKKAIDO · 2026.09.19 — 09.23</div>
-    <h1>北海道 4泊5日<br>ふたり旅のしおり</h1>
-    <p>温泉、港町、丘の景色、そして最後はトマム。</p>
+    <div class="eyebrow">HOKKAIDO · 2026.09.19 — 09.23</div>
+    <h1>HOKKAIDO</h1>
+    <div class="date">2026.09.19 — 09.23</div>
+    <p class="subtitle">北海道 4泊5日｜ふたり旅のしおり</p>
+    <p class="tagline">温泉、港町、丘の景色、そして最後はトマム。<br>食べて、走って、歩いて、北海道をまるごと楽しむ5日間。</p>
+    <div class="route">
+      <span>✈️ 新千歳</span><i>→</i><span>♨️ 登別</span><i>→</i><span>⚓️ 小樽</span><i>→</i>
+      <span>🌾 富良野</span><i>→</i><span>💙 美瑛</span><i>→</i><span>🏔️ トマム</span><i>→</i><span>✈️ 新千歳</span>
+    </div>
   </div>
+</header>
+
+<nav>
+  <div class="navin">
+    <a href="#d19">9/19</a><a href="#d20">9/20</a><a href="#d21">9/21</a><a href="#d22">9/22</a><a href="#d23">9/23</a>
+    <a href="#check">出発前チェック</a><a href="#links">公式サイト・地図</a>
+  </div>
+</nav>
+
+<main class="wrap days">
+
+<section class="day" id="d19">
+  <div class="dayhead">
+    <div><div><span class="daynum">9/19</span><span class="dow">SAT</span></div><h2 class="daytitle">新千歳 → 札幌 → 登別</h2><div class="theme">✦ 旅のはじまり・温泉スタート</div></div>
+    <span class="badge">DAY 1</span>
+  </div>
+  <div class="timeline">
+    <div class="item"><div class="time">8:45–10:35</div><div><h3>✈️ 羽田 → 新千歳</h3><p>MM513で新千歳空港へ。</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=新千歳空港" target="_blank">📍 空港MAP</a></div></div></div>
+    <div class="item"><div class="time">11:00頃</div><div><h3>🚗 KUHLレンタカー</h3><p>新千歳空港店でレンタカーを受け取り、札幌方面へ。</p><div class="links"><a class="btn" href="https://kuhl-rentacar.jp/shop.php" target="_blank">公式サイト</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=KUHLレンタカー新千歳空港店" target="_blank">📍 地図</a></div></div></div>
+    <div class="item"><div class="time">12:00頃</div><div><h3>🍖 札幌でジンギスカン</h3><p>お昼は札幌でジンギスカン。お店は未定。</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=札幌市+ジンギスカン" target="_blank">📍 ジンギスカンを探す</a></div></div></div>
+    <div class="item"><div class="time">〜15:00</div><div><h3>🍫 白い恋人パーク</h3><p>お菓子の世界をたっぷり楽しむ。15:00頃まで滞在。</p><div class="links"><a class="btn" href="https://www.shiroikoibitopark.jp/" target="_blank">公式サイト</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=白い恋人パーク" target="_blank">📍 地図</a></div></div></div>
+    <div class="item"><div class="time">15:00〜</div><div><h3>♨️ 登別へ移動</h3><p>札幌から登別へ。15:00〜チェックイン可能。</p></div></div>
+  </div>
+  <div class="hotel">
+  <strong>🏨 登別温泉 ホテルまほろば</strong>
+  <small>9/19泊 · 予約済み</small>
+  <details>
+    <summary>宿泊プランの詳細を開く</summary>
+    <div class="hotel-detail">
+      <div class="row"><span class="label">チェックイン</span>2026-09-19（土）15:00</div>
+      <div class="row"><span class="label">チェックアウト</span>2026-09-20（日）</div>
+      <div class="row"><span class="label">宿泊代表者</span>たかはし みずき 様</div>
+      <div class="row"><span class="label">人数</span>2名（大人2名・子ども0名）</div>
+      <div class="row"><span class="label">部屋数</span>1室</div>
+      <div class="row"><span class="label">客室</span>【禁煙】洋室ツインルーム／24㎡／2名（kt）</div>
+      <div class="plan"><span class="label">プラン</span>【1泊2食／夕食ビュッフェ】～リバティ～<br>季節によって変わるビュッフェと蟹食べ放題</div>
+    </div>
+  </details>
+  <div class="links"><a class="btn" href="https://h-mahoroba.jp/" target="_blank">公式サイト</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=登別温泉ホテルまほろば" target="_blank">📍 地図</a></div>
 </div>
+</section>
 
-<div class="content wrap">
-  <div class="card">
-    <div class="route">✈️ 新千歳 → <b>♨️ 登別</b> → <b>⚓️ 小樽</b> → <b>🌾 富良野</b> → <b>💙 美瑛</b> → <b>🏔️ トマム</b> → ✈️ 新千歳</div>
+<section class="day" id="d20">
+  <div class="dayhead">
+    <div><div><span class="daynum">9/20</span><span class="dow">SUN</span></div><h2 class="daytitle">登別 → 洞爺湖 → ニセコ → 小樽</h2><div class="theme">✦ 北海道ドライブ＆小樽街歩きDAY</div></div>
+    <span class="badge">DAY 2</span>
   </div>
-
-  <section class="card day" id="d19">
-    <div class="dayhead"><div class="date">9/19 SAT</div><div><h2>新千歳 → 登別</h2><span class="tag">温泉スタート</span></div></div>
-    <div class="time">
-      <div class="clock">午前</div><div class="item">羽田 → 新千歳 ✈️<br>到着後、レンタカーを受け取り登別へ</div>
-      <div class="clock">午後</div><div class="item">登別温泉街・地獄谷を散策 ♨️</div>
-      <div class="clock">夜</div><div class="item">温泉を楽しんで早めに休む</div>
+  <div class="timeline">
+    <div class="item"><div class="time">朝</div><div><h3>♨️ 登別で朝食・温泉</h3><p>ホテルで朝食。温泉を楽しんでチェックアウト。</p></div></div>
+    <div class="item"><div class="time">9:00頃</div><div><h3>🚗 登別を出発</h3><p>洞爺湖・羊蹄山・ニセコ方面を通りながら小樽へ。</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=洞爺湖" target="_blank">📍 洞爺湖</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=羊蹄山" target="_blank">📍 羊蹄山</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=ニセコ" target="_blank">📍 ニセコ</a></div></div></div>
+    <div class="item"><div class="time">昼</div><div><h3>🐄 高橋牧場</h3><p>道中で立ち寄り。できれば高橋牧場レストラン「プラティーヴォ」でランチ。</p><div class="links"><a class="btn" href="https://www.niseko-takahashi.jp/" target="_blank">公式サイト</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=ニセコ高橋牧場" target="_blank">📍 地図</a></div></div></div>
+    <div class="item"><div class="time">午後</div><div><h3>⚓️ 小樽観光</h3><p>ルタオ パトス、北一ホール、小樽オルゴール堂などを散策。</p><div class="links"><a class="btn" href="https://www.letao.jp/shop/pathos.php" target="_blank">ルタオ パトス</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=北一ホール小樽" target="_blank">📍 北一ホール</a><a class="btn" href="https://www.otaru-orgel.jp/" target="_blank">オルゴール堂</a></div></div></div>
+    <div class="item"><div class="time">18:00</div><div><h3>🍣 鮨処 まえだ</h3><p>夕食。予約を調整中。</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=鮨処まえだ小樽" target="_blank">📍 地図</a></div></div></div>
+    <div class="item"><div class="time">夜</div><div><h3>🌙 小樽運河 → ルーフトップBAR</h3><p>お寿司の後は夜の運河を散策。ホテルのルーフトップバーでまったり。</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=小樽運河" target="_blank">📍 小樽運河</a></div></div></div>
+  </div>
+  <div class="hotel">
+  <strong>🏨 小樽グランベルホテル</strong>
+  <small>9/20泊 · 予約済み</small>
+  <details>
+    <summary>宿泊プランの詳細を開く</summary>
+    <div class="hotel-detail">
+      <div class="row"><span class="label">チェックイン</span>2026-09-20（日）</div>
+      <div class="row"><span class="label">チェックアウト</span>2026-09-21（月）</div>
+      <div class="row"><span class="label">人数</span>2名（大人2名・子ども0名）</div>
+      <div class="row"><span class="label">部屋数</span>1室</div>
+      <div class="row"><span class="label">部屋タイプ</span>ダブル【禁煙】</div>
+      <div class="row"><span class="label">宿泊者</span>高橋 美祈（たかはし みのり）</div>
+      <div class="plan"><span class="label">プラン</span>【公式サイト限定／最安値】最大35％OFF◆展望露天&サウナ♪小樽運河目の前&観光アクセス抜群＜朝食付＞</div>
+      <div class="row"><span class="label">料金（税込）</span><span class="price">¥72,924</span></div>
     </div>
-    <div class="hotel card"><strong>🏨 登別温泉 ホテルまほろば</strong><br><span class="small">9/19泊 · 予約済み</span></div>
-  </section>
+  </details>
+  <div class="links"><a class="btn" href="https://granbellhotel.jp/otaru/" target="_blank">公式サイト</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=小樽グランベルホテル" target="_blank">📍 地図</a></div>
+</div>
+</section>
 
-  <section class="card day" id="d20">
-    <div class="dayhead"><div class="date">9/20 SUN</div><div><h2>登別 → 札幌 → 小樽</h2><span class="tag">街歩きDAY</span></div></div>
-    <div class="time">
-      <div class="clock">朝</div><div class="item">登別で朝食・温泉</div>
-      <div class="clock">昼</div><div class="item">札幌へ移動 → ランチ・市内散策 🍜</div>
-      <div class="clock">午後</div><div class="item">小樽へ移動 → 小樽運河・堺町通り・北一エリアなど ⚓️</div>
-      <div class="clock">夜</div><div class="item">小樽で夕食</div>
+<section class="day" id="d21">
+  <div class="dayhead">
+    <div><div><span class="daynum">9/21</span><span class="dow">MON</span></div><h2 class="daytitle">小樽 → 富良野</h2><div class="theme">✦ 小樽を少し歩いて、富良野へ</div></div>
+    <span class="badge">DAY 3</span>
+  </div>
+  <div class="timeline">
+    <div class="item"><div class="time">朝</div><div><h3>⚓️ 小樽を少し散策</h3><p>朝食後、チェックアウト前後で小樽の街をもう少し楽しむ。</p></div></div>
+    <div class="item"><div class="time">11:30頃</div><div><h3>🚗 富良野着</h3><p>小樽から富良野へドライブ。</p></div></div>
+    <div class="item"><div class="time">昼</div><div><h3>🍕 富良野チーズ工房</h3><p>ピザ工房でランチ。</p><div class="links"><a class="btn" href="https://www.furano-cheese.jp/" target="_blank">公式サイト</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=富良野チーズ工房" target="_blank">📍 地図</a></div></div></div>
+    <div class="item"><div class="time">午後</div><div><h3>🌲 ニングルテラス</h3><p>森の中のログハウスを散策。</p><div class="links"><a class="btn" href="https://www.princehotels.co.jp/shinfurano/facility/ningle_terrace/" target="_blank">公式サイト</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=ニングルテラス" target="_blank">📍 地図</a></div></div></div>
+    <div class="item"><div class="time">午後</div><div><h3>🌸 ファーム富田</h3><p>園内を散策。季節の景色を楽しむ。</p><div class="links"><a class="btn" href="https://farm-tomita.co.jp/" target="_blank">公式サイト</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=ファーム富田" target="_blank">📍 地図</a></div></div></div>
+    <div class="item"><div class="time">夜</div><div><h3>🏨 宿へ</h3><p>夜は宿でゆっくり。</p></div></div>
+  </div>
+  <div class="hotel">
+  <strong>🏨 フラノリゾート オリカ</strong>
+  <small>9/21泊 · 予約済み</small>
+  <details>
+    <summary>宿泊プランの詳細を開く</summary>
+    <div class="hotel-detail">
+      <div class="row"><span class="label">到着日</span>2026/09/21（月）18:00</div>
+      <div class="row"><span class="label">出発日</span>2026/09/22（火）11:00（1泊）</div>
+      <div class="row"><span class="label">宿泊者</span>高橋 美祈（たかはし みのり）様</div>
+      <div class="row"><span class="label">人数</span>2名</div>
+      <div class="row"><span class="label">部屋数</span>1室</div>
+      <div class="row"><span class="label">客室</span>【禁煙】スタンダードツイン 31㎡</div>
+      <div class="plan"><span class="label">プラン</span>【5月～10月】8月31日までの予約がお得♪ お日にち限定タイムセール1泊2食付<br>夕食：和洋折衷コース料理</div>
+      <div class="row"><span class="label">料金</span>大人 47,300円 × 2名</div>
     </div>
-    <div class="hotel card"><strong>🏨 小樽グランベルホテル</strong><br><span class="small">9/20泊 · 予約済み</span></div>
-  </section>
+  </details>
+  <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=フラノリゾートオリカ" target="_blank">📍 地図</a></div>
+</div>
+</section>
 
-  <section class="card day" id="d21">
-    <div class="dayhead"><div class="date">9/21 MON</div><div><h2>小樽 → 富良野</h2><span class="tag">ホテルを楽しむ日</span></div></div>
-    <div class="time">
-      <div class="clock">朝</div><div class="item">小樽散策・朝食</div>
-      <div class="clock">昼</div><div class="item">富良野方面へドライブ 🚗</div>
-      <div class="clock">午後</div><div class="item">富良野エリアをのんびり観光 🌾</div>
-      <div class="clock">夕方</div><div class="item">ホテルへチェックイン。景色を楽しむ</div>
-      <div class="clock">夜</div><div class="item">ホテルディナー・ゆっくりステイ</div>
+<section class="day" id="d22">
+  <div class="dayhead">
+    <div><div><span class="daynum">9/22</span><span class="dow">TUE</span></div><h2 class="daytitle">富良野 → 美瑛 → トマム</h2><div class="theme">✦ パンと青い池、そしてリゾート</div></div>
+    <span class="badge">DAY 4</span>
+  </div>
+  <div class="timeline">
+    <div class="item"><div class="time">朝</div><div><h3>🍳 オリカで朝食</h3><p>朝ごはんも宿で。時間に余裕をもって出発。</p></div></div>
+    <div class="item"><div class="time">11:30頃</div><div><h3>🍞 美瑛「bibre」</h3><p>美瑛着。パンを食べる。</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=bibre美瑛" target="_blank">📍 地図</a></div></div></div>
+    <div class="item"><div class="time">午後</div><div><h3>💙 青い池</h3><p>美瑛を代表する景色を楽しむ。</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=白金青い池" target="_blank">📍 地図</a><a class="btn" href="https://www.biei-hokkaido.jp/" target="_blank">美瑛観光協会</a></div></div></div>
+    <div class="item"><div class="time">午後</div><div><h3>🍮 美瑛選果</h3><p>プリンなど美瑛のおいしいものをチェック。</p><div class="links"><a class="btn" href="https://bieisenka.jp/" target="_blank">公式サイト</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=美瑛選果" target="_blank">📍 地図</a></div></div></div>
+    <div class="item"><div class="time">午後</div><div><h3>☕ Small things coffee</h3><p>美瑛でコーヒー休憩。</p><div class="links"><a class="btn" href="https://www.instagram.com/smallthings_coffee/" target="_blank">Instagram</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Small+things+coffee+美瑛" target="_blank">📍 地図</a></div></div></div>
+    <div class="item"><div class="time">〜17:00</div><div><h3>🏔️ トマム ザ・タワー</h3><p>17:00までにはチェックイン。</p><div class="note">⚠️ <strong>17:00 雲海ゴンドラ予約を忘れずに！</strong></div></div></div>
+    <div class="item"><div class="time">夜</div><div><h3>🍽️ トマム内で夕食</h3><p>リゾート内のレストランで食事。</p></div></div>
+  </div>
+  <div class="hotel">
+  <strong>🏨 トマム ザ・タワー by 星野リゾート</strong>
+  <small>9/22泊 · 予約予定 · チェックイン 15:00 / チェックアウト 11:00</small>
+  <details>
+    <summary>宿泊プランの詳細を開く</summary>
+    <div class="hotel-detail">
+      <div class="row"><span class="label">宿泊日</span>2026年09月22日（火）より1泊</div>
+      <div class="row"><span class="label">宿泊施設</span>トマム ザ・タワー by 星野リゾート</div>
+      <div class="row"><span class="label">電話</span>0167-58-1111</div>
+      <div class="row"><span class="label">人数</span>2名</div>
+      <div class="row"><span class="label">部屋</span>ファミリーツインルーム／禁煙／1室</div>
+      <div class="row"><span class="label">到着予定</span>16:00</div>
+      <div class="row"><span class="label">交通手段</span>車</div>
+      <div class="row"><span class="label">食事条件</span>1泊朝食のみ（朝食1回・昼食0回・夕食0回）</div>
+      <div class="plan"><span class="label">プラン</span>【スペシャルプラン】一泊朝食付き</div>
+      <div class="row"><span class="label">宿泊代金</span><span class="price">¥38,940（税込）</span></div>
     </div>
-    <div class="hotel card"><strong>🏨 フラノリゾート オリカ</strong><br><span class="small">9/21泊 · 予約済み</span></div>
-  </section>
+  </details>
+  <div class="links"><a class="btn" href="https://www.snowtomamu.jp/summer/hotel/tower/" target="_blank">公式サイト</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=トマムザタワー" target="_blank">📍 地図</a><a class="btn" href="https://www.jtb.co.jp/kokunai-hotel/htl/1578006/?refsite=dp" target="_blank">予約詳細</a></div>
+</div>
+</section>
 
-  <section class="card day" id="d22">
-    <div class="dayhead"><div class="date">9/22 TUE</div><div><h2>富良野 → 美瑛 → トマム</h2><span class="tag">景色＆リゾート</span></div></div>
-    <div class="time">
-      <div class="clock">朝</div><div class="item">オリカで朝食。時間に余裕をもって出発</div>
-      <div class="clock">午前</div><div class="item">美瑛へ → 丘の景色・青い池・白金エリア 💙</div>
-      <div class="clock">午後</div><div class="item">美瑛からトマムへドライブ 🚗</div>
-      <div class="clock">夕方</div><div class="item">トマム ザ・タワー チェックイン 🏔️</div>
-      <div class="clock">夜</div><div class="item">リゾート内で夕食・星空などを楽しむ ✨</div>
-    </div>
-    <div class="hotel card"><strong>🏨 トマム ザ・タワー</strong><br><span class="small">9/22泊 · 予約予定 · チェックイン 15:00 / チェックアウト 11:00</span></div>
-  </section>
+<section class="day" id="d23">
+  <div class="dayhead">
+    <div><div><span class="daynum">9/23</span><span class="dow">WED</span></div><h2 class="daytitle">トマム → 新千歳</h2><div class="theme">✦ 雲海から始まる最終日</div></div>
+    <span class="badge">DAY 5</span>
+  </div>
+  <div class="timeline">
+    <div class="item"><div class="time">3:45〜7:00</div><div><h3>🌄 雲海テラス</h3><p>早朝の雲海ゴンドラで雲海テラスへ。天候・雲海の状況次第。</p><div class="links"><a class="btn" href="https://www.snowtomamu.jp/summer/unkai/" target="_blank">公式サイト</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=雲海テラス" target="_blank">📍 地図</a></div></div></div>
+    <div class="item"><div class="time">朝</div><div><h3>🍳 トマム内で朝食</h3><p>雲海テラス後、トマム内で朝ごはん。</p></div></div>
+    <div class="item"><div class="time">午前</div><div><h3>🏔️ トマム内アクティビティ</h3><p>チェックアウトまで、トマムのアクティビティを楽しむ。</p></div></div>
+    <div class="item"><div class="time">昼頃</div><div><h3>🍛 スープカレー</h3><p>道中またはトマム内でランチ。</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=トマム+スープカレー" target="_blank">📍 トマムで探す</a></div></div></div>
+    <div class="item"><div class="time">〜14:00</div><div><h3>🚗 新千歳へ出発</h3><p>17:00までのレンタカー返却を逆算して、14:00頃には出発。</p><div class="links"><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=トマムザタワー&destination=新千歳空港" target="_blank">🗺️ トマム→新千歳</a></div></div></div>
+    <div class="item"><div class="time">〜17:00</div><div><h3>🚗 レンタカー返却</h3><p>新千歳空港で返却。</p><div class="links"><a class="btn" href="https://kuhl-rentacar.jp/shop.php" target="_blank">KUHL公式</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=KUHLレンタカー新千歳空港店" target="_blank">📍 地図</a></div></div></div>
+    <div class="item"><div class="time">17:00〜</div><div><h3>🛍️ 新千歳空港</h3><p>お土産を買ったり、ラーメンを食べたり。最後まで北海道を満喫。</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=新千歳空港" target="_blank">📍 空港MAP</a></div></div></div>
+    <div class="item"><div class="time">18:55</div><div><h3>✈️ 新千歳 → 羽田</h3><p>帰路へ。</p></div></div>
+  </div>
+</section>
 
-  <section class="card day" id="d23">
-    <div class="dayhead"><div class="date">9/23 WED</div><div><h2>トマム → 新千歳</h2><span class="tag">最終日</span></div></div>
-    <div class="time">
-      <div class="clock">朝</div><div class="item">朝食 → トマムで少しゆっくり ☀️</div>
-      <div class="clock">昼前</div><div class="item">チェックアウト。新千歳へ 🚗</div>
-      <div class="clock">午後</div><div class="item">レンタカー返却 → 空港でお土産・ランチ</div>
-      <div class="clock">夕方〜</div><div class="item">新千歳 → 羽田 ✈️</div>
-    </div>
-    <div class="note">✈️ 帰りの便は、空港到着に余裕を持てる時間帯がおすすめ。</div>
-  </section>
-
-  <section class="card">
-    <h2 style="margin:0;font-size:20px">☑️ 出発前チェック</h2>
-    <div class="check">
-      <label><input type="checkbox">往復航空券</label>
-      <label><input type="checkbox">レンタカー予約・免許証</label>
-      <label><input type="checkbox">登別まほろば予約確認</label>
-      <label><input type="checkbox">小樽グランベルホテル予約確認</label>
-      <label><input type="checkbox">フラノリゾート オリカ予約確認</label>
-      <label><input type="checkbox">トマム ザ・タワー予約確認</label>
-      <label><input type="checkbox">充電器・モバイルバッテリー</label>
-      <label><input type="checkbox">羽織りもの（9月の北海道対策）</label>
-    </div>
-  </section>
-
-  <section class="card">
-    <h2 style="margin:0;font-size:20px">🚗 ドライブメモ</h2>
+<div class="grid" id="check">
+  <div class="card check">
+    <h3>☑️ 出発前チェック</h3>
     <ul>
-      <li>新千歳 → 登別：まず温泉へ</li>
-      <li>登別 → 札幌 → 小樽：市街地を経由</li>
-      <li>小樽 → 富良野：移動日としてゆったり</li>
-      <li>富良野 → 美瑛 → トマム：景色を楽しみつつ移動</li>
-      <li>トマム → 新千歳：最終日は空港到着時刻を逆算</li>
+      <li>往復航空券</li><li>レンタカー予約・免許証</li><li>登別まほろば予約確認</li>
+      <li>小樽グランベルホテル予約確認</li><li>フラノリゾート オリカ予約確認</li>
+      <li>トマム ザ・タワー予約確認</li><li>鮨処まえだ 18:00予約調整</li>
+      <li>雲海テラス／ゴンドラの事前予約確認</li><li>充電器・モバイルバッテリー</li>
+      <li>羽織りもの（9月の北海道対策）</li>
     </ul>
-  </section>
+  </div>
+  <div class="card">
+    <h3>🚗 ドライブメモ</h3>
+    <ul>
+      <li>9/19 新千歳 → 札幌 → 白い恋人パーク → 登別</li>
+      <li>9/20 登別 → 洞爺湖 → 羊蹄山・ニセコ → 高橋牧場 → 小樽</li>
+      <li>9/21 小樽 → 富良野：富良野チーズ工房・ニングルテラス・ファーム富田</li>
+      <li>9/22 富良野 → 美瑛 → トマム</li>
+      <li>9/23 トマム → 新千歳：17:00返却を逆算</li>
+    </ul>
+  </div>
+  <div class="card" id="links">
+    <h3>📍 公式サイト・地図</h3>
+    <div class="mapgrid">
+      <a class="maplink" href="https://h-mahoroba.jp/" target="_blank">♨️ 登別まほろば｜公式</a>
+      <a class="maplink" href="https://www.niseko-takahashi.jp/" target="_blank">🐄 高橋牧場｜公式</a>
+      <a class="maplink" href="https://www.letao.jp/shop/pathos.php" target="_blank">🍰 ルタオ パトス｜公式</a>
+      <a class="maplink" href="https://www.otaru-orgel.jp/" target="_blank">🎵 オルゴール堂｜公式</a>
+      <a class="maplink" href="https://granbellhotel.jp/otaru/" target="_blank">⚓️ 小樽グランベル｜公式</a>
+      <a class="maplink" href="https://www.furano-cheese.jp/" target="_blank">🧀 富良野チーズ工房｜公式</a>
+      <a class="maplink" href="https://farm-tomita.co.jp/" target="_blank">🌸 ファーム富田｜公式</a>
+      <a class="maplink" href="https://www.snowtomamu.jp/summer/" target="_blank">🏔️ 星野リゾート トマム｜公式</a>
+      <a class="maplink" href="https://www.snowtomamu.jp/summer/unkai/" target="_blank">☁️ 雲海テラス｜公式</a>
+      <a class="maplink" href="https://bieisenka.jp/" target="_blank">🍮 美瑛選果｜公式</a>
+    </div>
+  </div>
 </div>
-<footer>HOKKAIDO 2026 · HAVE A BEAUTIFUL TRIP</footer>
+
+<div class="card">
+  <h3>💡 旅のメモ</h3>
+  <p>9/20の小樽は、<strong>ルタオ パトス → 北一ホール → オルゴール堂</strong>を中心に堺町エリアを歩き、18:00の鮨処まえだへ。夕食後は運河を夜散歩してホテルへ戻り、ルーフトップBARで締める流れ。</p>
+  <p>9/22は<strong>17:00までのトマムチェックイン＋雲海ゴンドラ予約</strong>が最重要。9/23は早朝の雲海テラスがあるため、夜は無理せず早めに休む。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="big">HOKKAIDO 2026 · HAVE A BEAUTIFUL TRIP</div>
+  <div>♨️ ⚓️ 🌾 💙 🏔️ ✈️</div>
+</footer>
+
 </body>
 </html>
